@@ -38,7 +38,7 @@ text = text.replace('-*- coding: utf-8 -*-', '')  # for Python 2.7
 namespace = {}
 eval(compile(text, path, 'exec'), namespace)
 
-setup(name = 'sgp4',
+setup(name = 'sgp4-edited',
       version = namespace['__version__'],
       description = description,
       long_description = long_description,

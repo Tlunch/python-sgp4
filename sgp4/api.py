@@ -16,8 +16,18 @@ SGP4_ERRORS = {
     6: 'mrt is less than 1.0 which indicates the satellite has decayed',
 }
 
+def set_accelerated_false():
+    '''
+    overwrited the standard behaviour and imports the python version of the sgp4 module
+    '''
+    global accelerated
+    from .model import Satrec, SatrecArray
+    from .model import WGS72OLD, WGS72, WGS84
+    accelerated = False
+
 try:
-    raise ImportError
+    from .wrapper import Satrec, SatrecArray
+    accelerated = True
 except ImportError:
     from .model import Satrec, SatrecArray
     from .model import WGS72OLD, WGS72, WGS84
