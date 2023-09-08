@@ -17,8 +17,7 @@ SGP4_ERRORS = {
 }
 
 try:
-    from .wrapper import Satrec, SatrecArray
-    accelerated = True
+    raise ImportError
 except ImportError:
     from .model import Satrec, SatrecArray
     from .model import WGS72OLD, WGS72, WGS84
